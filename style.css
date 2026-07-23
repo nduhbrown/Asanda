@@ -1,0 +1,109 @@
+/* ==========================================
+   PROJECT ASANDA ❤️
+   Created for Asanda Chiliza
+   By Nduh
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    color:#222;
+
+    overflow-x:hidden;
+
+    line-height:1.8;
+
+}
+
+/* Soft animated background */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-200px;
+left:-200px;
+
+width:600px;
+height:600px;
+
+background:#dbeeff;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.6;
+
+animation:float1 14s ease-in-out infinite;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+right:-220px;
+
+bottom:-220px;
+
+width:650px;
+
+height:650px;
+
+background:#ffd9f1;
+
+border-radius:50%;
+
+filter:blur(130px);
+
+opacity:.6;
+
+animation:float2 16s ease-in-out infinite;
+
+z-index:-2;
+
+}
+
+@keyframes float1{
+
+0%,100%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(60px,40px);
+}
+
+}
+
+@keyframes float2{
+
+0%,100%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(-60px,-40px);
+}
+
+}
