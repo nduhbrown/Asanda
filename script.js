@@ -1,54 +1,62 @@
-// ==========================================
-// PROJECT ASANDA ❤️
-// By Nduh
-// ==========================================
+/* ==========================================
+   PROJECT ASANDA ❤️
+   By Nduh
+========================================== */
 
+const giftScreen = document.getElementById("giftScreen");
+const mainContent = document.getElementById("mainContent");
+
+const giftBox = document.getElementById("giftBox");
 const openGift = document.getElementById("openGift");
-const giftBox = document.getElementById("gift-box");
-const website = document.getElementById("website");
-const giftScreen = document.getElementById("gift-screen");
-const typing = document.getElementById("typing");
 
-website.style.display = "none";
+const typewriter = document.getElementById("typewriter");
 
-const message = [
-    "Hi Babey... ❤️",
-    "Before you watch this...",
-    "I want you to know something...",
-    "This wasn't bought in a shop.",
-    "It was made with love...",
-    "Happy Birthday, Cthandwa sam. ❤️"
+const continueBtn = document.getElementById("continueBtn");
+
+const lines = [
+
+"Hi Babey... ❤️",
+
+"Before you watch this...",
+
+"I made something special...",
+
+"Not because I had to...",
+
+"But because I love you.",
+
+"Happy Birthday, Cthandwa sam. ❤️"
+
 ];
 
 let line = 0;
 let letter = 0;
 
-function typeWriter(){
+mainContent.style.display = "none";
 
-    if(line >= message.length){
+function typeMessage(){
 
-    return;
-
+    if(line >= lines.length){
+        return;
     }
-    }
 
-    if(letter < message[line].length){
+    if(letter < lines[line].length){
 
-        typing.innerHTML += message[line].charAt(letter);
+        typewriter.innerHTML += lines[line].charAt(letter);
 
         letter++;
 
-        setTimeout(typeWriter,70);
+        setTimeout(typeMessage,70);
 
     }else{
 
-        typing.innerHTML += "<br>";
+        typewriter.innerHTML += "<br>";
 
         line++;
 
         letter = 0;
 
-        setTimeout(typeWriter,900);
+        setTimeout(typeMessage,900);
 
     }
 
@@ -58,14 +66,72 @@ openGift.addEventListener("click",()=>{
 
     giftBox.classList.add("open");
 
+    openGift.disabled = true;
+
     setTimeout(()=>{
 
-        giftScreen.style.display="none";
+        giftScreen.style.display = "none";
 
-        website.style.display="block";
+        mainContent.style.display = "block";
 
-        typeWriter();
+        window.scrollTo(0,0);
+
+        typeMessage();
 
     },1200);
 
+});/* ==========================================
+   CONTINUE BUTTON
+========================================== */
+
+continueBtn.addEventListener("click",()=>{
+
+    document.querySelector(".videoSection").scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
 });
+
+/* ==========================================
+   FADE IN ANIMATION
+========================================== */
+
+const fadeItems = document.querySelectorAll(
+
+".letter, .videoSection, .timeline, .promise, .ending"
+
+);
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+
+    threshold:0.15
+
+});
+
+fadeItems.forEach(section=>{
+
+    section.classList.add("fadeUp");
+
+    observer.observe(section);
+
+});
+
+/* ==========================================
+   FINISH
+========================================== */
+
+console.log("Project Asanda ❤️ loaded successfully.");
