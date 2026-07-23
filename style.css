@@ -158,6 +158,12 @@ button{
     background:linear-gradient(90deg,#6aa8ff,#ff8ece);
     color:#fff;
     transition:.3s;
+
+    display:block;
+    width:80%;
+    max-width:300px;
+    margin:15px auto;
+}
 }
 
 button:hover{
