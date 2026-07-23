@@ -306,7 +306,25 @@ transform:translateY(-3px);
     display:none;
     animation:fadeIn 1s ease;
 }
+/* Hide story sections until unlocked */
 
+.letter,
+.videoSection,
+.timeline,
+.promise,
+.ending{
+
+display:none;
+
+}
+
+.showSection{
+
+display:block;
+
+animation:fadeIn .8s ease;
+
+}
 @keyframes fadeIn{
     from{
         opacity:0;
