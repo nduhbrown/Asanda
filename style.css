@@ -200,3 +200,116 @@ box-shadow:0 10px 25px rgba(103,167,255,.35);
 transform:translateY(-4px);
 
 }
+/* ==========================================
+   GIFT BOX
+========================================== */
+
+#gift-box{
+
+position:relative;
+
+width:160px;
+
+height:160px;
+
+margin:0 auto 35px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+#gift-box:hover{
+
+transform:scale(1.05);
+
+}
+
+/* Box */
+
+.box{
+
+position:absolute;
+
+bottom:0;
+
+width:160px;
+
+height:110px;
+
+background:linear-gradient(180deg,#ffb6dc,#ff7fc3);
+
+border-radius:0 0 18px 18px;
+
+}
+
+/* Lid */
+
+.lid{
+
+position:absolute;
+
+top:20px;
+
+width:170px;
+
+height:35px;
+
+left:-5px;
+
+background:linear-gradient(180deg,#6faeff,#4e90ff);
+
+border-radius:12px;
+
+transition:.8s;
+
+transform-origin:left center;
+
+}
+
+/* Vertical Ribbon */
+
+.ribbon-vertical{
+
+position:absolute;
+
+left:72px;
+
+top:20px;
+
+width:16px;
+
+height:140px;
+
+background:white;
+
+border-radius:20px;
+
+}
+
+/* Horizontal Ribbon */
+
+.ribbon-horizontal{
+
+position:absolute;
+
+top:60px;
+
+width:160px;
+
+height:16px;
+
+background:white;
+
+border-radius:20px;
+
+}
+
+/* Gift opens */
+
+.open .lid{
+
+transform:rotate(-28deg) translateY(-18px);
+
+}
