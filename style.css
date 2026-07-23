@@ -673,3 +673,17 @@ width:100%;
 }
 
 }
+/* Story flow */
+
+.letter,
+.videoSection,
+.timeline,
+.promise,
+.ending{
+    display:none;
+}
+
+.showSection{
+    display:block;
+    animation:fadeIn 0.8s ease;
+}
