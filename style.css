@@ -1,10 +1,7 @@
-/* ===================================================
+/* ==================================================
    PROJECT ASANDA ❤️
-   Luxury Birthday Website
-   Created for Nduh & Asanda
-=================================================== */
-
-/* RESET */
+   Final Version
+================================================== */
 
 *{
     margin:0;
@@ -20,311 +17,161 @@ body{
     font-family:'Poppins',sans-serif;
     background:#ffffff;
     color:#222;
+    line-height:1.8;
     overflow-x:hidden;
-    line-height:1.7;
 }
 
 /* Animated Background */
 
-.background{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    z-index:-2;
-}
-
-.background::before,
-.background::after{
+body::before,
+body::after{
     content:"";
-    position:absolute;
+    position:fixed;
     width:500px;
     height:500px;
     border-radius:50%;
     filter:blur(120px);
+    z-index:-1;
     opacity:.45;
 }
 
-.background::before{
-    background:#b9dcff;
-    top:-150px;
-    left:-150px;
-    animation:floatBlue 15s ease-in-out infinite;
+body::before{
+    background:#b7dcff;
+    top:-180px;
+    left:-180px;
+    animation:blueFloat 16s infinite ease-in-out;
 }
 
-.background::after{
-    background:#ffd0eb;
-    bottom:-150px;
-    right:-150px;
-    animation:floatPink 18s ease-in-out infinite;
+body::after{
+    background:#ffd4ec;
+    bottom:-180px;
+    right:-180px;
+    animation:pinkFloat 18s infinite ease-in-out;
 }
 
-@keyframes floatBlue{
-
-0%,100%{
-transform:translate(0,0);
+@keyframes blueFloat{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(80px,50px);}
 }
 
-50%{
-transform:translate(80px,50px);
-}
-
-}
-
-@keyframes floatPink{
-
-0%,100%{
-transform:translate(0,0);
-}
-
-50%{
-transform:translate(-70px,-60px);
-}
-
+@keyframes pinkFloat{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-80px,-60px);}
 }
 
 /* Gift Screen */
 
 #giftScreen{
-
-min-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:30px;
-
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
 }
-
-/* Card */
 
 .giftCard{
-
-width:100%;
-max-width:520px;
-
-background:white;
-
-padding:45px;
-
-border-radius:32px;
-
-text-align:center;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.08);
-
-backdrop-filter:blur(20px);
-
+    width:100%;
+    max-width:520px;
+    background:#fff;
+    border-radius:30px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
 }
 
-.topText{
-
-color:#6d8dff;
-
-font-weight:600;
-
-margin-bottom:18px;
-
+.giftCard h3{
+    color:#6a97ff;
+    margin-bottom:15px;
 }
 
 .giftCard h1{
-
-font-size:2.4rem;
-
-margin-bottom:20px;
-
-font-weight:700;
-
+    font-size:2.4rem;
+    margin-bottom:20px;
 }
 
-.description{
-
-color:#666;
-
-margin-bottom:35px;
-
-font-size:1rem;
-
+.giftCard p{
+    color:#666;
+    margin-bottom:30px;
 }
 
-/* Gift */
+/* Gift Box */
 
 #giftBox{
-
-position:relative;
-
-width:170px;
-
-height:170px;
-
-margin:0 auto 35px;
-
-cursor:pointer;
-
-transition:.4s;
-
+    position:relative;
+    width:170px;
+    height:170px;
+    margin:0 auto 35px;
+    cursor:pointer;
 }
 
-#giftBox:hover{
-
-transform:translateY(-6px) scale(1.03);
-
+.box{
+    position:absolute;
+    bottom:0;
+    width:170px;
+    height:120px;
+    background:linear-gradient(#ffb4dd,#ff83c5);
+    border-radius:0 0 18px 18px;
 }
 
-.giftBase{
-
-position:absolute;
-
-bottom:0;
-
-width:170px;
-
-height:120px;
-
-background:linear-gradient(
-180deg,
-#ffb8df,
-#ff82c4
-);
-
-border-radius:0 0 20px 20px;
-
-}
-
-.giftLid{
-
-position:absolute;
-
-top:18px;
-
-left:-5px;
-
-width:180px;
-
-height:36px;
-
-background:linear-gradient(
-180deg,
-#8fc3ff,
-#5ea5ff
-);
-
-border-radius:14px;
-
-transition:1s;
-
-transform-origin:left center;
-
+.lid{
+    position:absolute;
+    top:18px;
+    left:-5px;
+    width:180px;
+    height:36px;
+    background:linear-gradient(#84bcff,#5b9fff);
+    border-radius:12px;
+    transition:1s;
+    transform-origin:left center;
 }
 
 .verticalRibbon{
-
-position:absolute;
-
-left:77px;
-
-top:18px;
-
-width:16px;
-
-height:145px;
-
-background:white;
-
-border-radius:20px;
-
+    position:absolute;
+    left:77px;
+    top:18px;
+    width:16px;
+    height:145px;
+    background:#fff;
 }
 
 .horizontalRibbon{
-
-position:absolute;
-
-top:60px;
-
-width:170px;
-
-height:16px;
-
-background:white;
-
-border-radius:20px;
-
+    position:absolute;
+    top:60px;
+    width:170px;
+    height:16px;
+    background:#fff;
 }
 
-.open .giftLid{
-
-transform:
-rotate(-30deg)
-translateY(-18px);
-
+.open .lid{
+    transform:rotate(-30deg) translateY(-18px);
 }
 
 /* Button */
 
-#openGift{
-
-background:
-linear-gradient(
-90deg,
-#67a8ff,
-#ff8ecf
-);
-
-border:none;
-
-color:white;
-
-padding:16px 34px;
-
-border-radius:40px;
-
-font-size:18px;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.3s;
-
-box-shadow:
-0 10px 25px rgba(103,168,255,.35);
-
+button{
+    border:none;
+    cursor:pointer;
+    border-radius:40px;
+    padding:16px 34px;
+    font-size:17px;
+    font-weight:600;
+    background:linear-gradient(90deg,#6aa8ff,#ff8ece);
+    color:#fff;
+    transition:.3s;
 }
 
-#openGift:hover{
-
-transform:translateY(-3px);
-
-}/* ==========================================
-   MAIN CONTENT
+button:hover{
+    transform:translateY(-3px);
+}
+/* ==========================================
+   MAIN WEBSITE
 ========================================== */
 
 #mainContent{
     display:none;
     animation:fadeIn 1s ease;
 }
-/* Hide story sections until unlocked */
 
-.letter,
-.videoSection,
-.timeline,
-.promise,
-.ending{
-
-display:none;
-
-}
-
-.showSection{
-
-display:block;
-
-animation:fadeIn .8s ease;
-
-}
 @keyframes fadeIn{
     from{
         opacity:0;
@@ -341,74 +188,77 @@ animation:fadeIn .8s ease;
 ========================================== */
 
 .hero{
-    min-height:70vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:80px 25px;
+    padding:40px 20px;
 }
 
 #typewriter{
-    font-size:2.3rem;
+    font-size:2.6rem;
     font-weight:700;
-    max-width:700px;
+    max-width:800px;
+    min-height:180px;
     color:#222;
-    min-height:170px;
 }
 
-.madeBy{
+.subtitle{
     margin-top:25px;
     color:#777;
     font-size:1rem;
+}
+
+#nextButtonContainer{
+    margin-top:40px;
+    display:none;
+}
+
+.centerButton{
+    text-align:center;
+    margin-top:40px;
+}
+
+/* ==========================================
+   HIDE STORY SECTIONS
+========================================== */
+
+.letter,
+.videoSection,
+.gallery,
+.timeline,
+.promise,
+.ending{
+    display:none;
+    max-width:1000px;
+    margin:90px auto;
+    padding:0 20px;
+}
+
+.showSection{
+    display:block;
+    animation:fadeIn .8s ease;
 }
 
 /* ==========================================
    LETTER
 ========================================== */
 
-.letter{
-    padding:80px 25px;
-}
-
 .letter h2{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:35px;
     font-size:2rem;
 }
 
-.letterCard{
-    max-width:800px;
-    margin:auto;
+.letter p{
     background:#fff;
+    padding:35px;
     border-radius:25px;
-    padding:40px;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
-    border:2px solid #ffe5f3;
-}
-
-.letterCard p{
-    margin-bottom:22px;
-    font-size:1.05rem;
     color:#444;
-}
-
-#continueBtn{
-    display:block;
-    margin:40px auto 0;
-    background:linear-gradient(90deg,#67a8ff,#ff8ecf);
-    color:white;
-    border:none;
-    padding:16px 36px;
-    border-radius:40px;
-    font-size:17px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-#continueBtn:hover{
-    transform:translateY(-3px);
+    line-height:2;
 }
 
 /* ==========================================
@@ -416,7 +266,6 @@ animation:fadeIn .8s ease;
 ========================================== */
 
 .videoSection{
-    padding:80px 25px;
     text-align:center;
 }
 
@@ -424,117 +273,100 @@ animation:fadeIn .8s ease;
     margin-bottom:20px;
 }
 
-.videoText{
-    color:#666;
-    margin-bottom:35px;
-}
-
-.videoCard{
-    max-width:850px;
-    margin:auto;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-}
-
-.videoCard video{
+.videoSection video{
     width:100%;
-    display:block;
+    border-radius:25px;
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+    margin:25px 0;
+}
+
+.videoSection p{
+    color:#666;
+}
+/* ==========================================
+   GALLERY
+========================================== */
+
+.gallery h2{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:2rem;
+}
+
+.galleryGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.galleryGrid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.galleryGrid img:hover{
+    transform:scale(1.03);
 }
 
 /* ==========================================
    TIMELINE
 ========================================== */
 
-.timeline{
-    max-width:900px;
-    margin:100px auto;
-    padding:0 25px;
-}
-
 .timeline h2{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
 .timelineItem{
     display:flex;
-    gap:25px;
-    margin-bottom:40px;
+    gap:20px;
+    margin-bottom:35px;
 }
 
 .dot{
     width:18px;
     height:18px;
-    background:#ff8ecf;
     border-radius:50%;
+    background:#ff8ecf;
     margin-top:8px;
 }
 
 .content{
+    flex:1;
     background:#fff;
     padding:25px;
     border-radius:20px;
     box-shadow:0 12px 30px rgba(0,0,0,.08);
-    flex:1;
 }
 
-.content h3{
-    margin-bottom:10px;
-       }/* ==========================================
+/* ==========================================
    PROMISE
 ========================================== */
 
-.promise{
-
-padding:100px 25px;
-
-text-align:center;
-
-}
-
-.promise h2{
-
-margin-bottom:40px;
-
-}
-
 .promiseCard{
+    background:#fff;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
 
-max-width:700px;
-
-margin:auto;
-
-background:white;
-
-padding:40px;
-
-border-radius:25px;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-border:2px solid #e9f3ff;
-
+.promiseCard h2{
+    margin-bottom:25px;
 }
 
 .promiseCard p{
-
-font-size:1.05rem;
-
-color:#444;
-
-margin-bottom:30px;
-
-line-height:1.9;
-
+    line-height:2;
+    color:#444;
 }
 
 .promiseCard h3{
-
-color:#ff6fb5;
-
-font-size:1.4rem;
-
+    margin-top:30px;
+    color:#ff6fb8;
 }
 
 /* ==========================================
@@ -542,166 +374,74 @@ font-size:1.4rem;
 ========================================== */
 
 .ending{
-
-padding:120px 25px;
-
-text-align:center;
-
+    text-align:center;
+    padding-bottom:100px;
 }
 
 .ending h1{
-
-font-size:2.8rem;
-
-margin-bottom:25px;
-
+    font-size:2.8rem;
+    margin-bottom:25px;
 }
 
-.ending p{
-
-font-size:1.1rem;
-
-color:#555;
-
-margin-bottom:25px;
-
+.ending h2{
+    margin:35px 0;
+    color:#ff6fb8;
 }
 
 .footerSignature{
-
-margin-top:60px;
-
-font-weight:600;
-
-color:#777;
-
-}
-
-/* ==========================================
-   FADE ANIMATION
-========================================== */
-
-.fadeUp{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:all .8s ease;
-
-}
-
-.fadeUp.show{
-
-opacity:1;
-
-transform:translateY(0);
-
+    margin-top:50px;
+    color:#777;
 }
 
 /* ==========================================
    MOBILE
 ========================================== */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
-.giftCard{
-
-padding:30px;
-
-}
-
-.giftCard h1{
-
-font-size:2rem;
-
+.hero{
+    min-height:80vh;
 }
 
 #typewriter{
-
-font-size:1.8rem;
-
-min-height:140px;
-
+    font-size:2rem;
+    min-height:150px;
 }
 
-.letterCard{
+.giftCard{
+    padding:30px;
+}
 
-padding:28px;
-
+.giftCard h1{
+    font-size:2rem;
 }
 
 .timelineItem{
+    flex-direction:column;
+}
 
-flex-direction:column;
+.galleryGrid{
+    grid-template-columns:1fr;
+}
 
-gap:12px;
+button{
+    width:100%;
+}
 
 }
 
-.dot{
+@media(max-width:480px){
 
-margin-left:8px;
+#typewriter{
+    font-size:1.6rem;
+}
 
+.giftCard h1{
+    font-size:1.7rem;
 }
 
 .ending h1{
-
-font-size:2.2rem;
-
+    font-size:2rem;
 }
 
-.promiseCard{
-
-padding:30px;
-
-}
-
-}
-
-/* ==========================================
-   SMALL PHONES
-========================================== */
-
-@media (max-width:480px){
-
-.giftCard h1{
-
-font-size:1.8rem;
-
-}
-
-#giftBox{
-
-transform:scale(.9);
-
-}
-
-#typewriter{
-
-font-size:1.5rem;
-
-}
-
-#openGift,
-#continueBtn{
-
-width:100%;
-
-}
-
-}
-/* Story flow */
-
-.letter,
-.videoSection,
-.timeline,
-.promise,
-.ending{
-    display:none;
-}
-
-.showSection{
-    display:block;
-    animation:fadeIn 0.8s ease;
 }
