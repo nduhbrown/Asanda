@@ -1,6 +1,5 @@
 /* ==========================================
    PROJECT ASANDA ❤️
-   Final Script
 ========================================== */
 
 // Elements
@@ -28,47 +27,41 @@ const promiseButton = document.getElementById("promiseButton");
 const endingButton = document.getElementById("endingButton");
 
 // Hide website
-mainContent.style.display = "none";
+if (mainContent) {
+    mainContent.style.display = "none";
+}
 
-// Typewriter text
+// Typewriter
 const lines = [
-
-"Hi Babey... ❤️",
-
-"Before you watch this...",
-
-"I made something special...",
-
-"Not because I had to...",
-
-"But because I love you.",
-
-"Happy Birthday, Cthandwa sam. ❤️"
-
+    "Hi Babey... ❤️",
+    "Before you watch this...",
+    "I made something special...",
+    "Not because I had to...",
+    "But because I love you.",
+    "Happy Birthday, Cthandwa sam. ❤️"
 ];
 
 let line = 0;
 let letterIndex = 0;
 
-function typeMessage(){
+function typeMessage() {
 
-    if(line >= lines.length){
-
-        nextButtonContainer.style.display = "block";
-
+    if (line >= lines.length) {
+        if (nextButtonContainer) {
+            nextButtonContainer.style.display = "block";
+        }
         return;
-
     }
 
-    if(letterIndex < lines[line].length){
+    if (letterIndex < lines[line].length) {
 
         typewriter.innerHTML += lines[line].charAt(letterIndex);
 
         letterIndex++;
 
-        setTimeout(typeMessage,70);
+        setTimeout(typeMessage, 70);
 
-    }else{
+    } else {
 
         typewriter.innerHTML += "<br>";
 
@@ -76,109 +69,113 @@ function typeMessage(){
 
         letterIndex = 0;
 
-        setTimeout(typeMessage,900);
-
+        setTimeout(typeMessage, 900);
     }
+}
+
+// Open Gift
+if (openGift) {
+
+    openGift.addEventListener("click", () => {
+
+        giftBox.classList.add("open");
+
+        openGift.disabled = true;
+
+        setTimeout(() => {
+
+            giftScreen.style.display = "none";
+
+            mainContent.style.display = "block";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+            typeMessage();
+
+        }, 1200);
+
+    });
 
 }
 
-// Open gift
-openGift.addEventListener("click",()=>{
+// Letter
+if (letterButton && letter) {
 
-    giftBox.classList.add("open");
+    letterButton.addEventListener("click", () => {
 
-    openGift.disabled = true;
+        letter.classList.add("showSection");
 
-    setTimeout(()=>{
-
-        giftScreen.style.display = "none";
-
-        mainContent.style.display = "block";
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
+        letter.scrollIntoView({
+            behavior: "smooth"
         });
 
-        typeMessage();
-
-    },1200);
-
-});
-/* ==========================================
-   STORY FLOW
-========================================== */
-
-// Letter
-
-letterButton.addEventListener("click",()=>{
-
-    letter.classList.add("showSection");
-
-    letter.scrollIntoView({
-
-        behavior:"smooth"
-
     });
 
-});
+}
 
 // Video
+if (videoButton && video) {
 
-videoButton.addEventListener("click",()=>{
+    videoButton.addEventListener("click", () => {
 
-    video.classList.add("showSection");
+        video.classList.add("showSection");
 
-    video.scrollIntoView({
-
-        behavior:"smooth"
+        video.scrollIntoView({
+            behavior: "smooth"
+        });
 
     });
 
-});
+}
 
 // Gallery + Timeline
+if (timelineButton && gallery && timeline) {
 
-timelineButton.addEventListener("click",()=>{
+    timelineButton.addEventListener("click", () => {
 
-    gallery.classList.add("showSection");
+        gallery.classList.add("showSection");
 
-    timeline.classList.add("showSection");
+        timeline.classList.add("showSection");
 
-    timeline.scrollIntoView({
-
-        behavior:"smooth"
+        gallery.scrollIntoView({
+            behavior: "smooth"
+        });
 
     });
 
-});
+}
 
 // Promise
+if (promiseButton && promise) {
 
-promiseButton.addEventListener("click",()=>{
+    promiseButton.addEventListener("click", () => {
 
-    promise.classList.add("showSection");
+        promise.classList.add("showSection");
 
-    promise.scrollIntoView({
-
-        behavior:"smooth"
+        promise.scrollIntoView({
+            behavior: "smooth"
+        });
 
     });
 
-});
+}
 
 // Ending
+if (endingButton && ending) {
 
-endingButton.addEventListener("click",()=>{
+    endingButton.addEventListener("click", () => {
 
-    ending.classList.add("showSection");
+        ending.classList.add("showSection");
 
-    ending.scrollIntoView({
-
-        behavior:"smooth"
+        ending.scrollIntoView({
+            behavior: "smooth"
+        });
 
     });
 
-});
+}
 
 console.log("Project Asanda ❤️ Loaded Successfully");
