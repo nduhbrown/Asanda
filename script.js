@@ -1,8 +1,9 @@
 /* ==========================================
    PROJECT ASANDA ❤️
-   By Nduh
+   Final Script
 ========================================== */
 
+// Elements
 const giftScreen = document.getElementById("giftScreen");
 const mainContent = document.getElementById("mainContent");
 
@@ -11,8 +12,25 @@ const openGift = document.getElementById("openGift");
 
 const typewriter = document.getElementById("typewriter");
 
-const continueBtn = document.getElementById("continueBtn");
+const nextButtonContainer = document.getElementById("nextButtonContainer");
+const letterButton = document.getElementById("letterButton");
 
+const letter = document.querySelector(".letter");
+const video = document.querySelector(".videoSection");
+const gallery = document.querySelector(".gallery");
+const timeline = document.querySelector(".timeline");
+const promise = document.querySelector(".promise");
+const ending = document.querySelector(".ending");
+
+const videoButton = document.getElementById("videoButton");
+const timelineButton = document.getElementById("timelineButton");
+const promiseButton = document.getElementById("promiseButton");
+const endingButton = document.getElementById("endingButton");
+
+// Hide website
+mainContent.style.display = "none";
+
+// Typewriter text
 const lines = [
 
 "Hi Babey... ❤️",
@@ -30,21 +48,23 @@ const lines = [
 ];
 
 let line = 0;
-let letter = 0;
-
-mainContent.style.display = "none";
+let letterIndex = 0;
 
 function typeMessage(){
 
     if(line >= lines.length){
+
+        nextButtonContainer.style.display = "block";
+
         return;
+
     }
 
-    if(letter < lines[line].length){
+    if(letterIndex < lines[line].length){
 
-        typewriter.innerHTML += lines[line].charAt(letter);
+        typewriter.innerHTML += lines[line].charAt(letterIndex);
 
-        letter++;
+        letterIndex++;
 
         setTimeout(typeMessage,70);
 
@@ -54,7 +74,7 @@ function typeMessage(){
 
         line++;
 
-        letter = 0;
+        letterIndex = 0;
 
         setTimeout(typeMessage,900);
 
@@ -62,6 +82,7 @@ function typeMessage(){
 
 }
 
+// Open gift
 openGift.addEventListener("click",()=>{
 
     giftBox.classList.add("open");
@@ -74,19 +95,27 @@ openGift.addEventListener("click",()=>{
 
         mainContent.style.display = "block";
 
-        window.scrollTo(0,0);
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
         typeMessage();
 
     },1200);
 
-});/* ==========================================
-   CONTINUE BUTTON
+});
+/* ==========================================
+   STORY FLOW
 ========================================== */
 
-continueBtn.addEventListener("click",()=>{
+// Letter
 
-    document.querySelector(".videoSection").scrollIntoView({
+letterButton.addEventListener("click",()=>{
+
+    letter.classList.add("showSection");
+
+    letter.scrollIntoView({
 
         behavior:"smooth"
 
@@ -94,44 +123,62 @@ continueBtn.addEventListener("click",()=>{
 
 });
 
-/* ==========================================
-   FADE IN ANIMATION
-========================================== */
+// Video
 
-const fadeItems = document.querySelectorAll(
+videoButton.addEventListener("click",()=>{
 
-".letter, .videoSection, .timeline, .promise, .ending"
+    video.classList.add("showSection");
 
-);
+    video.scrollIntoView({
 
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
+        behavior:"smooth"
 
     });
 
-},{
+});
 
-    threshold:0.15
+// Gallery + Timeline
+
+timelineButton.addEventListener("click",()=>{
+
+    gallery.classList.add("showSection");
+
+    timeline.classList.add("showSection");
+
+    timeline.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
 
 });
 
-fadeItems.forEach(section=>{
+// Promise
 
-    section.classList.add("fadeUp");
+promiseButton.addEventListener("click",()=>{
 
-    observer.observe(section);
+    promise.classList.add("showSection");
+
+    promise.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
 
 });
 
-/* ==========================================
-   FINISH
-========================================== */
+// Ending
 
-console.log("Project Asanda ❤️ loaded successfully.");
+endingButton.addEventListener("click",()=>{
+
+    ending.classList.add("showSection");
+
+    ending.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+});
+
+console.log("Project Asanda ❤️ Loaded Successfully");
