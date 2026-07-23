@@ -313,3 +313,23 @@ border-radius:20px;
 transform:rotate(-28deg) translateY(-18px);
 
 }
+/* Hide website until gift opens */
+
+#website{
+    display:none;
+    animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
