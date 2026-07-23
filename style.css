@@ -333,3 +333,30 @@ transform:translateY(0);
 }
 
 }
+/* Hide all story sections */
+
+.letter,
+.video,
+.timeline,
+.promise,
+.ending{
+
+display:none;
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:1s;
+
+}
+
+.show{
+
+display:block;
+
+opacity:1;
+
+transform:translateY(0);
+
+}
