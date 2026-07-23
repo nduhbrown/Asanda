@@ -26,7 +26,12 @@ let letter = 0;
 function typeWriter(){
 
     if(line >= message.length){
-        return;
+
+    document.querySelector(".letter").classList.add("show");
+
+    return;
+
+    }
     }
 
     if(letter < message[line].length){
