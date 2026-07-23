@@ -27,8 +27,6 @@ function typeWriter(){
 
     if(line >= message.length){
 
-    document.querySelector(".letter").classList.add("show");
-
     return;
 
     }
