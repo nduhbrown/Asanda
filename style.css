@@ -102,6 +102,8 @@ body::after{
     height:170px;
     margin:0 auto 35px;
     cursor:pointer;
+
+    animation:giftGlow 2.5s ease-in-out infinite;
 }
 
 .box{
