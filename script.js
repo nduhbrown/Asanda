@@ -47,6 +47,7 @@ const message = [
 
 let line = 0;
 let letterIndex = 0;
+let isTyping = false;
 
 function burstHearts(){
 
@@ -81,16 +82,22 @@ function burstHearts(){
 
 function typeMessage() {
 
+    // Reset the typewriter content when starting
+    if (line === 0 && letterIndex === 0) {
+        typewriter.innerHTML = "";
+    }
+
     if (line >= message.length) {
         if (nextButtonContainer) {
             nextButtonContainer.style.display = "block";
         }
+        isTyping = false;
         return;
     }
 
     if (letterIndex < message[line].length) {
 
-        // FIXED: Changed "lines" to "message"
+        // FIXED: Using message array correctly
         typewriter.innerHTML += message[line].charAt(letterIndex);
 
         letterIndex++;
@@ -123,7 +130,7 @@ if (openGift) {
 
         openGift.disabled = true;
 
-        // FIXED: Added 1.5 second delay before showing main content
+        // Wait 1.5 seconds before showing main content
         setTimeout(() => {
 
             giftScreen.style.display = "none";
@@ -135,10 +142,17 @@ if (openGift) {
                 behavior: "smooth"
             });
 
-            // Start typing after the delay
-            typeMessage();
+            // Reset typewriter state
+            line = 0;
+            letterIndex = 0;
+            typewriter.innerHTML = "";
+            
+            // Start typing after a small delay
+            setTimeout(() => {
+                typeMessage();
+            }, 300);
 
-        }, 1500); // Changed from 1200 to 1500 (1.5 seconds)
+        }, 1500);
 
     });
 
@@ -149,7 +163,6 @@ if (letterButton && letter) {
 
     letterButton.addEventListener("click", () => {
 
-        // Hide any other visible sections first
         document.querySelectorAll('.showSection').forEach(el => {
             el.classList.remove('showSection');
         });
@@ -169,7 +182,6 @@ if (videoButton && video) {
 
     videoButton.addEventListener("click", () => {
 
-        // Hide any other visible sections first
         document.querySelectorAll('.showSection').forEach(el => {
             el.classList.remove('showSection');
         });
@@ -189,7 +201,6 @@ if (timelineButton && gallery && timeline) {
 
     timelineButton.addEventListener("click", () => {
 
-        // Hide any other visible sections first
         document.querySelectorAll('.showSection').forEach(el => {
             el.classList.remove('showSection');
         });
@@ -210,7 +221,6 @@ if (promiseButton && promise) {
 
     promiseButton.addEventListener("click", () => {
 
-        // Hide any other visible sections first
         document.querySelectorAll('.showSection').forEach(el => {
             el.classList.remove('showSection');
         });
@@ -230,7 +240,6 @@ if (endingButton && ending) {
 
     endingButton.addEventListener("click", () => {
 
-        // Hide any other visible sections first
         document.querySelectorAll('.showSection').forEach(el => {
             el.classList.remove('showSection');
         });
