@@ -44,7 +44,6 @@ const message = [
 
 let line = 0;
 let letterIndex = 0;
-let isTyping = false;
 
 function burstHearts(){
 
@@ -88,13 +87,11 @@ function typeMessage() {
         if (nextButtonContainer) {
             nextButtonContainer.style.display = "block";
         }
-        isTyping = false;
         return;
     }
 
     if (letterIndex < message[line].length) {
 
-        // FIXED: Using message array correctly
         typewriter.innerHTML += message[line].charAt(letterIndex);
 
         letterIndex++;
@@ -113,25 +110,26 @@ function typeMessage() {
     }
 }
 
-// Open Gift
+// Open Gift Button Click
 if (openGift) {
 
-    openGift.addEventListener("click", () => {
-
+    openGift.addEventListener("click", function(e) {
+        e.preventDefault();
+        
+        // Add bounce animation
         giftBox.classList.add("bounce");
 
-        setTimeout(()=>{
+        setTimeout(function(){
             giftBox.classList.add("open");
             burstHearts();
-        },200);
+        }, 200);
 
         openGift.disabled = true;
 
         // Wait 1.5 seconds before showing main content
-        setTimeout(() => {
+        setTimeout(function() {
 
             giftScreen.style.display = "none";
-
             mainContent.style.display = "block";
 
             window.scrollTo({
@@ -145,7 +143,7 @@ if (openGift) {
             typewriter.innerHTML = "";
             
             // Start typing after a small delay
-            setTimeout(() => {
+            setTimeout(function() {
                 typeMessage();
             }, 300);
 
@@ -155,12 +153,21 @@ if (openGift) {
 
 }
 
+// Also allow clicking on the gift box itself
+if (giftBox) {
+    giftBox.addEventListener("click", function() {
+        if (!openGift.disabled) {
+            openGift.click();
+        }
+    });
+}
+
 // Letter
 if (letterButton && letter) {
 
-    letterButton.addEventListener("click", () => {
+    letterButton.addEventListener("click", function() {
 
-        document.querySelectorAll('.showSection').forEach(el => {
+        document.querySelectorAll('.showSection').forEach(function(el) {
             el.classList.remove('showSection');
         });
 
@@ -177,9 +184,9 @@ if (letterButton && letter) {
 // Video
 if (videoButton && video) {
 
-    videoButton.addEventListener("click", () => {
+    videoButton.addEventListener("click", function() {
 
-        document.querySelectorAll('.showSection').forEach(el => {
+        document.querySelectorAll('.showSection').forEach(function(el) {
             el.classList.remove('showSection');
         });
 
@@ -196,9 +203,9 @@ if (videoButton && video) {
 // Journey (merged Gallery + Timeline)
 if (timelineButton && journey) {
 
-    timelineButton.addEventListener("click", () => {
+    timelineButton.addEventListener("click", function() {
 
-        document.querySelectorAll('.showSection').forEach(el => {
+        document.querySelectorAll('.showSection').forEach(function(el) {
             el.classList.remove('showSection');
         });
 
@@ -215,9 +222,9 @@ if (timelineButton && journey) {
 // Promise
 if (promiseButton && promise) {
 
-    promiseButton.addEventListener("click", () => {
+    promiseButton.addEventListener("click", function() {
 
-        document.querySelectorAll('.showSection').forEach(el => {
+        document.querySelectorAll('.showSection').forEach(function(el) {
             el.classList.remove('showSection');
         });
 
