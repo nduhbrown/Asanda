@@ -509,3 +509,38 @@ button{
 }
 
 }
+/* ==========================
+   HEART BURST
+========================== */
+
+#heartContainer{
+    position:absolute;
+    left:50%;
+    top:40px;
+    width:0;
+    height:0;
+    pointer-events:none;
+}
+
+.heart{
+    position:absolute;
+    font-size:24px;
+    animation:flyHeart 2s ease-out forwards;
+}
+
+@keyframes flyHeart{
+
+0%{
+    opacity:1;
+    transform:translate(0,0) scale(.3);
+}
+
+100%{
+    opacity:0;
+    transform:
+        translate(var(--x),-180px)
+        scale(1.4)
+        rotate(360deg);
+}
+
+}
