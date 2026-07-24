@@ -3,6 +3,7 @@
 ========================================== */
 
 // Elements
+const heartContainer = document.getElementById("heartContainer");
 const giftScreen = document.getElementById("giftScreen");
 const mainContent = document.getElementById("mainContent");
 
@@ -43,7 +44,36 @@ const lines = [
 
 let line = 0;
 let letterIndex = 0;
+function burstHearts(){
 
+    const colors = ["❤️","🩷","💙","🤍"];
+
+    for(let i=0;i<18;i++){
+
+        const heart = document.createElement("span");
+
+        heart.className="heart";
+
+        heart.innerHTML =
+            colors[Math.floor(Math.random()*colors.length)];
+
+        heart.style.setProperty(
+            "--x",
+            (Math.random()*220-110)+"px"
+        );
+
+        heart.style.animationDelay =
+            (Math.random()*0.2)+"s";
+
+        heartContainer.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },2200);
+
+    }
+
+}
 function typeMessage() {
 
     if (line >= lines.length) {
