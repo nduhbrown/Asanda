@@ -454,3 +454,31 @@ button{
 }
 
 }
+/* ==========================================
+   GIFT GLOW
+========================================== */
+
+@keyframes giftGlow{
+
+0%{
+    transform:scale(1);
+    filter:
+        drop-shadow(0 0 6px #6faeff)
+        drop-shadow(0 0 10px #ff9ed1);
+}
+
+50%{
+    transform:scale(1.06);
+    filter:
+        drop-shadow(0 0 20px #6faeff)
+        drop-shadow(0 0 35px #ff8ed1);
+}
+
+100%{
+    transform:scale(1);
+    filter:
+        drop-shadow(0 0 6px #6faeff)
+        drop-shadow(0 0 10px #ff9ed1);
+}
+
+}
