@@ -47,6 +47,7 @@ const message = [
 
 let line = 0;
 let letterIndex = 0;
+
 function burstHearts(){
 
     const colors = ["❤️","🩷","💙","🤍"];
@@ -77,6 +78,7 @@ function burstHearts(){
     }
 
 }
+
 function typeMessage() {
 
     if (line >= message.length) {
@@ -88,7 +90,8 @@ function typeMessage() {
 
     if (letterIndex < message[line].length) {
 
-        typewriter.innerHTML += lines[line].charAt(letterIndex);
+        // FIXED: Changed "lines" to "message"
+        typewriter.innerHTML += message[line].charAt(letterIndex);
 
         letterIndex++;
 
@@ -113,12 +116,14 @@ if (openGift) {
 
         giftBox.classList.add("bounce");
 
-setTimeout(()=>{
-    giftBox.classList.add("open");burstHearts();
-},200);
+        setTimeout(()=>{
+            giftBox.classList.add("open");
+            burstHearts();
+        },200);
 
         openGift.disabled = true;
 
+        // FIXED: Added 1.5 second delay before showing main content
         setTimeout(() => {
 
             giftScreen.style.display = "none";
@@ -130,9 +135,10 @@ setTimeout(()=>{
                 behavior: "smooth"
             });
 
+            // Start typing after the delay
             typeMessage();
 
-        }, 1200);
+        }, 1500); // Changed from 1200 to 1500 (1.5 seconds)
 
     });
 
@@ -142,6 +148,11 @@ setTimeout(()=>{
 if (letterButton && letter) {
 
     letterButton.addEventListener("click", () => {
+
+        // Hide any other visible sections first
+        document.querySelectorAll('.showSection').forEach(el => {
+            el.classList.remove('showSection');
+        });
 
         letter.classList.add("showSection");
 
@@ -158,6 +169,11 @@ if (videoButton && video) {
 
     videoButton.addEventListener("click", () => {
 
+        // Hide any other visible sections first
+        document.querySelectorAll('.showSection').forEach(el => {
+            el.classList.remove('showSection');
+        });
+
         video.classList.add("showSection");
 
         video.scrollIntoView({
@@ -173,8 +189,12 @@ if (timelineButton && gallery && timeline) {
 
     timelineButton.addEventListener("click", () => {
 
-        gallery.classList.add("showSection");
+        // Hide any other visible sections first
+        document.querySelectorAll('.showSection').forEach(el => {
+            el.classList.remove('showSection');
+        });
 
+        gallery.classList.add("showSection");
         timeline.classList.add("showSection");
 
         gallery.scrollIntoView({
@@ -190,6 +210,11 @@ if (promiseButton && promise) {
 
     promiseButton.addEventListener("click", () => {
 
+        // Hide any other visible sections first
+        document.querySelectorAll('.showSection').forEach(el => {
+            el.classList.remove('showSection');
+        });
+
         promise.classList.add("showSection");
 
         promise.scrollIntoView({
@@ -204,6 +229,11 @@ if (promiseButton && promise) {
 if (endingButton && ending) {
 
     endingButton.addEventListener("click", () => {
+
+        // Hide any other visible sections first
+        document.querySelectorAll('.showSection').forEach(el => {
+            el.classList.remove('showSection');
+        });
 
         ending.classList.add("showSection");
 
