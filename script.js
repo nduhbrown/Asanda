@@ -111,7 +111,7 @@ if (openGift) {
         giftBox.classList.add("bounce");
 
 setTimeout(()=>{
-    giftBox.classList.add("open");
+    giftBox.classList.add("open");burstHearts();
 },200);
 
         openGift.disabled = true;
