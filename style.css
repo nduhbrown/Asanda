@@ -230,7 +230,7 @@ button:hover{
 }
 
 /* ==========================================
-   HIDE STORY SECTIONS
+   HIDE STORY SECTIONS - FIXED
 ========================================== */
 
 .letter,
@@ -246,7 +246,7 @@ button:hover{
 }
 
 .showSection{
-    display:block;
+    display:block !important;
     animation:fadeIn .8s ease;
 }
 
@@ -543,4 +543,4 @@ button{
         rotate(360deg);
 }
 
-}
+                  }
