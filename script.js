@@ -1,257 +1,336 @@
-/* ==========================================
-   PROJECT ASANDA ❤️
-========================================== */
+<!DOCTYPE html>
+<html lang="en">
 
-// Elements
-const heartContainer = document.getElementById("heartContainer");
-const giftScreen = document.getElementById("giftScreen");
-const mainContent = document.getElementById("mainContent");
+<head>
 
-const giftBox = document.getElementById("giftBox");
-const openGift = document.getElementById("openGift");
+    <meta charset="UTF-8">
 
-const typewriter = document.getElementById("typewriter");
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-const nextButtonContainer = document.getElementById("nextButtonContainer");
-const letterButton = document.getElementById("letterButton");
+    <title>Happy Birthday Asanda ❤️</title>
 
-const letter = document.querySelector(".letter");
-const video = document.querySelector(".videoSection");
-const gallery = document.querySelector(".gallery");
-const timeline = document.querySelector(".timeline");
-const promise = document.querySelector(".promise");
-const ending = document.querySelector(".ending");
+    <link rel="stylesheet" href="style.css">
 
-const videoButton = document.getElementById("videoButton");
-const timelineButton = document.getElementById("timelineButton");
-const promiseButton = document.getElementById("promiseButton");
-const endingButton = document.getElementById("endingButton");
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-// Hide website
-if (mainContent) {
-    mainContent.style.display = "none";
-}
+</head>
 
-// Typewriter
-const message = [
-    "Hi Babey... ❤️",
-    "Before you watch this...",
-    "I hope today makes you smile.",
-    "I hope you enjoy every little gift I got for you.",
-    "No gift could ever truly show how much you mean to me...",
-    "But I hope these remind you just how loved you are.",
-    "Happy Birthday, My Love. 🎂❤️",
-    "And Happy 5 Months Anniversary to Us. ❤️",
-    "I love you, Cthandwa sam. ❤️"
-];
+<body>
 
-let line = 0;
-let letterIndex = 0;
-let isTyping = false;
+    <!-- ========================= -->
+    <!-- GIFT SCREEN -->
+    <!-- ========================= -->
 
-function burstHearts(){
+    <section id="giftScreen">
 
-    const colors = ["❤️","🩷","💙","🤍"];
+        <div class="giftCard">
 
-    for(let i=0;i<18;i++){
+            <h3>Someone made something special...</h3>
 
-        const heart = document.createElement("span");
+            <h1>
+                Happy Birthday<br>
+                Asanda ❤️
+            </h1>
 
-        heart.className="heart";
+            <p>
+                This surprise was made with love,
+                especially for you.
+            </p>
 
-        heart.innerHTML =
-            colors[Math.floor(Math.random()*colors.length)];
+            <div id="giftBox">
 
-        heart.style.setProperty(
-            "--x",
-            (Math.random()*220-110)+"px"
-        );
+                <div class="lid"></div>
 
-        heart.style.animationDelay =
-            (Math.random()*0.2)+"s";
+                <div class="box"></div>
 
-        heartContainer.appendChild(heart);
+                <div class="verticalRibbon"></div>
 
-        setTimeout(()=>{
-            heart.remove();
-        },2200);
+                <div class="horizontalRibbon"></div>
 
-    }
+                <div id="heartContainer"></div>
 
-}
+            </div>
 
-function typeMessage() {
+            <button id="openGift">
 
-    // Reset the typewriter content when starting
-    if (line === 0 && letterIndex === 0) {
-        typewriter.innerHTML = "";
-    }
+                🎁 Open My Gift
 
-    if (line >= message.length) {
-        if (nextButtonContainer) {
-            nextButtonContainer.style.display = "block";
-        }
-        isTyping = false;
-        return;
-    }
+            </button>
 
-    if (letterIndex < message[line].length) {
+        </div>
 
-        // FIXED: Using message array correctly
-        typewriter.innerHTML += message[line].charAt(letterIndex);
+    </section>
 
-        letterIndex++;
+    <!-- ========================= -->
+    <!-- MAIN WEBSITE -->
+    <!-- ========================= -->
 
-        setTimeout(typeMessage, 70);
+    <main id="mainContent">
 
-    } else {
+        <!-- ========================= -->
+        <!-- HERO SECTION (TYPING MESSAGE) -->
+        <!-- ========================= -->
 
-        typewriter.innerHTML += "<br>";
+        <section class="hero">
 
-        line++;
+            <h1 id="typewriter"></h1>
 
-        letterIndex = 0;
+            <p class="subtitle">
 
-        setTimeout(typeMessage, 900);
-    }
-}
+                Made with ❤️ by
+                <strong>Nduh</strong>
 
-// Open Gift
-if (openGift) {
+            </p>
 
-    openGift.addEventListener("click", () => {
+            <div id="nextButtonContainer">
 
-        giftBox.classList.add("bounce");
+                <button id="letterButton">
 
-        setTimeout(()=>{
-            giftBox.classList.add("open");
-            burstHearts();
-        },200);
+                    💌 Read My Letter
 
-        openGift.disabled = true;
+                </button>
 
-        // Wait 1.5 seconds before showing main content
-        setTimeout(() => {
+            </div>
 
-            giftScreen.style.display = "none";
+        </section>
 
-            mainContent.style.display = "block";
+        <!-- ========================= -->
+        <!-- LETTER SECTION -->
+        <!-- ========================= -->
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+        <section class="letter">
 
-            // Reset typewriter state
-            line = 0;
-            letterIndex = 0;
-            typewriter.innerHTML = "";
-            
-            // Start typing after a small delay
-            setTimeout(() => {
-                typeMessage();
-            }, 300);
+            <h2>💌 A Letter For You</h2>
 
-        }, 1500);
+            <p>
 
-    });
+                Cthandwa sam,<br><br>
 
-}
+                Happy Birthday and Happy 5-Month Anniversary! 🎉<br><br>
 
-// Letter
-if (letterButton && letter) {
+                Since the day we became "us" on 13 March 2026,<br>
+                every day with you has been a blessing.<br><br>
 
-    letterButton.addEventListener("click", () => {
+                Thank you for loving me,<br>
+                supporting me,<br>
+                making me smile,<br>
+                and bringing peace into my life.<br><br>
 
-        document.querySelectorAll('.showSection').forEach(el => {
-            el.classList.remove('showSection');
-        });
+                On your special day and our milestone,<br>
+                I pray that God blesses you with<br>
+                good health,<br>
+                happiness,<br>
+                success,<br>
+                and a future brighter than your dreams.<br><br>
 
-        letter.classList.add("showSection");
+                Never forget how much you mean to me.<br>
+                I love you today,<br>
+                tomorrow,<br>
+                and always.<br><br>
 
-        letter.scrollIntoView({
-            behavior: "smooth"
-        });
+                ❤️ Forever Yours,<br>
+                <strong>Nduh</strong>
 
-    });
+            </p>
 
-}
+            <div class="centerButton">
 
-// Video
-if (videoButton && video) {
+                <button id="videoButton">
 
-    videoButton.addEventListener("click", () => {
+                    🎥 Watch Our Memory
 
-        document.querySelectorAll('.showSection').forEach(el => {
-            el.classList.remove('showSection');
-        });
+                </button>
 
-        video.classList.add("showSection");
+            </div>
 
-        video.scrollIntoView({
-            behavior: "smooth"
-        });
+        </section>
 
-    });
+        <!-- ========================= -->
+        <!-- VIDEO SECTION -->
+        <!-- ========================= -->
 
-}
+        <section class="videoSection">
 
-// Gallery + Timeline
-if (timelineButton && gallery && timeline) {
+            <h2>🎥 Our Special Memory</h2>
 
-    timelineButton.addEventListener("click", () => {
+            <video controls>
 
-        document.querySelectorAll('.showSection').forEach(el => {
-            el.classList.remove('showSection');
-        });
+                <source src="videos/birthday.mp4" type="video/mp4">
 
-        gallery.classList.add("showSection");
-        timeline.classList.add("showSection");
+            </video>
 
-        gallery.scrollIntoView({
-            behavior: "smooth"
-        });
+            <p>
 
-    });
+                Every second with you
+                became a memory
+                I'll treasure forever.
 
-}
+            </p>
 
-// Promise
-if (promiseButton && promise) {
+            <div class="centerButton">
 
-    promiseButton.addEventListener("click", () => {
+                <button id="timelineButton">
 
-        document.querySelectorAll('.showSection').forEach(el => {
-            el.classList.remove('showSection');
-        });
+                    ❤️ Continue to Our Story
 
-        promise.classList.add("showSection");
+                </button>
 
-        promise.scrollIntoView({
-            behavior: "smooth"
-        });
+            </div>
 
-    });
+        </section>
 
-}
+        <!-- ========================= -->
+        <!-- JOURNEY SECTION (MERGED GALLERY + TIMELINE) -->
+        <!-- ========================= -->
 
-// Ending
-if (endingButton && ending) {
+        <section class="journey">
 
-    endingButton.addEventListener("click", () => {
+            <h2>❤️ Our Journey Together</h2>
 
-        document.querySelectorAll('.showSection').forEach(el => {
-            el.classList.remove('showSection');
-        });
+            <!-- 13 March 2026 -->
+            <div class="timelineItem journey-item">
 
-        ending.classList.add("showSection");
+                <div class="dot"></div>
 
-        ending.scrollIntoView({
-            behavior: "smooth"
-        });
+                <div class="content">
 
-    });
+                    <h3>📅 13 March 2026</h3>
 
-}
+                    <p>
+                        The day our hearts found each other. ❤️
+                    </p>
 
-console.log("Project Asanda ❤️ Loaded Successfully");
+                </div>
+
+            </div>
+
+            <!-- Photos for 13 March -->
+            <div class="galleryGrid journey-grid">
+
+                <img src="images/photo1.jpg" alt="Memory 1">
+                <img src="images/photo2.png" alt="Memory 2">
+
+            </div>
+
+            <!-- 06 August 2026 -->
+            <div class="timelineItem journey-item">
+
+                <div class="dot"></div>
+
+                <div class="content">
+
+                    <h3>📅 06 August 2026</h3>
+
+                    <p>
+                        Celebrating your birthday and our 5 beautiful months together. ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Kiss Animation Placeholder -->
+            <div class="kiss-placeholder">
+
+                <p class="placeholder-text">
+                    💋 Forehead Kiss Animation Coming Soon ❤️
+                </p>
+
+            </div>
+
+            <!-- Birthday & Anniversary -->
+            <div class="celebration-text">
+
+                <p class="birthday-text">🎂 Happy Birthday</p>
+
+                <p class="anniversary-text">❤️ Happy 5 Months Anniversary</p>
+
+            </div>
+
+            <!-- Forever -->
+            <div class="timelineItem journey-item">
+
+                <div class="dot"></div>
+
+                <div class="content">
+
+                    <h3>📅 Forever</h3>
+
+                    <p>
+                        This is only the beginning of our beautiful story. ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Forever Animation Placeholder -->
+            <div class="forever-placeholder">
+
+                <p class="placeholder-text">
+                    💕 Floating Hearts Animation Coming Soon ❤️
+                </p>
+
+            </div>
+
+            <p class="story-message">
+                "Our story is only just beginning..."
+            </p>
+
+            <!-- Open My Promise button -->
+            <div class="centerButton">
+
+                <button id="promiseButton">
+
+                    💍 Open My Promise
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- PROMISE SECTION (FINAL) -->
+        <!-- ========================= -->
+
+        <section class="promise">
+
+            <div class="promiseCard">
+
+                <h2>💖 My Promise To You</h2>
+
+                <p>
+
+                    Happy Birthday, my love! 🎂<br>
+                    Happy 5 Months Anniversary! ❤️<br><br>
+
+                    Thank you for making these five months some of the happiest moments of my life.<br><br>
+
+                    I promise to love you,<br>
+                    respect you,<br>
+                    support your dreams,<br>
+                    protect your smile,<br>
+                    and choose you every single day.<br><br>
+
+                    No matter what life brings,<br>
+                    I'll always be by your side.<br><br>
+
+                    Here's to many more birthdays, anniversaries, adventures,<br>
+                    and beautiful memories together.<br><br>
+
+                    Forever Yours,<br>
+                    <strong>Nduh ❤️</strong>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
