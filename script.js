@@ -33,13 +33,16 @@ if (mainContent) {
 }
 
 // Typewriter
-const lines = [
+const message = [
     "Hi Babey... ❤️",
     "Before you watch this...",
-    "I made something special...",
-    "Not because I had to...",
-    "But because I love you.",
-    "Happy Birthday, Cthandwa sam. ❤️"
+    "I hope today makes you smile.",
+    "I hope you enjoy every little gift I got for you.",
+    "No gift could ever truly show how much you mean to me...",
+    "But I hope these remind you just how loved you are.",
+    "Happy Birthday, My Love. 🎂❤️",
+    "And Happy 5 Months Anniversary to Us. ❤️",
+    "I love you, Cthandwa sam. ❤️"
 ];
 
 let line = 0;
