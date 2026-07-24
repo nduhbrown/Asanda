@@ -1,336 +1,563 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Happy Birthday Asanda ❤️</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-    <!-- ========================= -->
-    <!-- GIFT SCREEN -->
-    <!-- ========================= -->
-
-    <section id="giftScreen">
-
-        <div class="giftCard">
-
-            <h3>Someone made something special...</h3>
-
-            <h1>
-                Happy Birthday<br>
-                Asanda ❤️
-            </h1>
-
-            <p>
-                This surprise was made with love,
-                especially for you.
-            </p>
-
-            <div id="giftBox">
-
-                <div class="lid"></div>
-
-                <div class="box"></div>
-
-                <div class="verticalRibbon"></div>
-
-                <div class="horizontalRibbon"></div>
-
-                <div id="heartContainer"></div>
-
-            </div>
-
-            <button id="openGift">
-
-                🎁 Open My Gift
-
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- MAIN WEBSITE -->
-    <!-- ========================= -->
-
-    <main id="mainContent">
-
-        <!-- ========================= -->
-        <!-- HERO SECTION (TYPING MESSAGE) -->
-        <!-- ========================= -->
-
-        <section class="hero">
-
-            <h1 id="typewriter"></h1>
-
-            <p class="subtitle">
-
-                Made with ❤️ by
-                <strong>Nduh</strong>
-
-            </p>
-
-            <div id="nextButtonContainer">
-
-                <button id="letterButton">
-
-                    💌 Read My Letter
-
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- ========================= -->
-        <!-- LETTER SECTION -->
-        <!-- ========================= -->
-
-        <section class="letter">
-
-            <h2>💌 A Letter For You</h2>
-
-            <p>
-
-                Cthandwa sam,<br><br>
-
-                Happy Birthday and Happy 5-Month Anniversary! 🎉<br><br>
-
-                Since the day we became "us" on 13 March 2026,<br>
-                every day with you has been a blessing.<br><br>
-
-                Thank you for loving me,<br>
-                supporting me,<br>
-                making me smile,<br>
-                and bringing peace into my life.<br><br>
-
-                On your special day and our milestone,<br>
-                I pray that God blesses you with<br>
-                good health,<br>
-                happiness,<br>
-                success,<br>
-                and a future brighter than your dreams.<br><br>
-
-                Never forget how much you mean to me.<br>
-                I love you today,<br>
-                tomorrow,<br>
-                and always.<br><br>
-
-                ❤️ Forever Yours,<br>
-                <strong>Nduh</strong>
-
-            </p>
-
-            <div class="centerButton">
-
-                <button id="videoButton">
-
-                    🎥 Watch Our Memory
-
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- ========================= -->
-        <!-- VIDEO SECTION -->
-        <!-- ========================= -->
-
-        <section class="videoSection">
-
-            <h2>🎥 Our Special Memory</h2>
-
-            <video controls>
-
-                <source src="videos/birthday.mp4" type="video/mp4">
-
-            </video>
-
-            <p>
-
-                Every second with you
-                became a memory
-                I'll treasure forever.
-
-            </p>
-
-            <div class="centerButton">
-
-                <button id="timelineButton">
-
-                    ❤️ Continue to Our Story
-
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- ========================= -->
-        <!-- JOURNEY SECTION (MERGED GALLERY + TIMELINE) -->
-        <!-- ========================= -->
-
-        <section class="journey">
-
-            <h2>❤️ Our Journey Together</h2>
-
-            <!-- 13 March 2026 -->
-            <div class="timelineItem">
-
-                <div class="dot"></div>
-
-                <div class="content">
-
-                    <h3>📅 13 March 2026</h3>
-
-                    <p>
-                        The day our hearts found each other. ❤️
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- Photos for 13 March -->
-            <div class="galleryGrid">
-
-                <img src="images/photo1.jpg" alt="Memory 1">
-                <img src="images/photo2.png" alt="Memory 2">
-
-            </div>
-
-            <!-- 06 August 2026 -->
-            <div class="timelineItem">
-
-                <div class="dot"></div>
-
-                <div class="content">
-
-                    <h3>📅 06 August 2026</h3>
-
-                    <p>
-                        Celebrating your birthday and our 5 beautiful months together. ❤️
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- Kiss Animation Placeholder -->
-            <div class="kiss-placeholder">
-
-                <p class="placeholder-text">
-                    💋 Forehead Kiss Animation Coming Soon ❤️
-                </p>
-
-            </div>
-
-            <!-- Birthday & Anniversary -->
-            <div class="celebration-text">
-
-                <p class="birthday-text">🎂 Happy Birthday</p>
-
-                <p class="anniversary-text">❤️ Happy 5 Months Anniversary</p>
-
-            </div>
-
-            <!-- Forever -->
-            <div class="timelineItem">
-
-                <div class="dot"></div>
-
-                <div class="content">
-
-                    <h3>📅 Forever</h3>
-
-                    <p>
-                        This is only the beginning of our beautiful story. ❤️
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- Forever Animation Placeholder -->
-            <div class="forever-placeholder">
-
-                <p class="placeholder-text">
-                    💕 Floating Hearts Animation Coming Soon ❤️
-                </p>
-
-            </div>
-
-            <p class="story-message">
-                "Our story is only just beginning..."
-            </p>
-
-            <!-- Open My Promise button -->
-            <div class="centerButton">
-
-                <button id="promiseButton">
-
-                    💍 Open My Promise
-
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- ========================= -->
-        <!-- PROMISE SECTION (FINAL) -->
-        <!-- ========================= -->
-
-        <section class="promise">
-
-            <div class="promiseCard">
-
-                <h2>💖 My Promise To You</h2>
-
-                <p>
-
-                    Happy Birthday, my love! 🎂<br>
-                    Happy 5 Months Anniversary! ❤️<br><br>
-
-                    Thank you for making these five months some of the happiest moments of my life.<br><br>
-
-                    I promise to love you,<br>
-                    respect you,<br>
-                    support your dreams,<br>
-                    protect your smile,<br>
-                    and choose you every single day.<br><br>
-
-                    No matter what life brings,<br>
-                    I'll always be by your side.<br><br>
-
-                    Here's to many more birthdays, anniversaries, adventures,<br>
-                    and beautiful memories together.<br><br>
-
-                    Forever Yours,<br>
-                    <strong>Nduh ❤️</strong>
-
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+/* ==================================================
+   PROJECT ASANDA ❤️
+   Final Version
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#222;
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+    opacity:.45;
+}
+
+body::before{
+    background:#b7dcff;
+    top:-180px;
+    left:-180px;
+    animation:blueFloat 16s infinite ease-in-out;
+}
+
+body::after{
+    background:#ffd4ec;
+    bottom:-180px;
+    right:-180px;
+    animation:pinkFloat 18s infinite ease-in-out;
+}
+
+@keyframes blueFloat{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(80px,50px);}
+}
+
+@keyframes pinkFloat{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-80px,-60px);}
+}
+
+/* Gift Screen */
+
+#giftScreen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.giftCard{
+    width:100%;
+    max-width:520px;
+    background:#fff;
+    border-radius:30px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
+.giftCard h3{
+    color:#6a97ff;
+    margin-bottom:15px;
+}
+
+.giftCard h1{
+    font-size:2.4rem;
+    margin-bottom:20px;
+}
+
+.giftCard p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+/* Gift Box */
+
+#giftBox{
+    position:relative;
+    width:170px;
+    height:170px;
+    margin:0 auto 35px;
+    cursor:pointer;
+
+    animation:giftGlow 2.5s ease-in-out infinite;
+}
+
+.box{
+    position:absolute;
+    bottom:0;
+    width:170px;
+    height:120px;
+    background:linear-gradient(#ffb4dd,#ff83c5);
+    border-radius:0 0 18px 18px;
+}
+
+.lid{
+    position:absolute;
+    top:18px;
+    left:-5px;
+    width:180px;
+    height:36px;
+    background:linear-gradient(#84bcff,#5b9fff);
+    border-radius:12px;
+    transition:1s;
+    transform-origin:left center;
+}
+
+.verticalRibbon{
+    position:absolute;
+    left:77px;
+    top:18px;
+    width:16px;
+    height:145px;
+    background:#fff;
+}
+
+.horizontalRibbon{
+    position:absolute;
+    top:60px;
+    width:170px;
+    height:16px;
+    background:#fff;
+}
+
+.open .lid{
+    transform:rotate(-30deg) translateY(-18px);
+}
+
+/* Button */
+
+button{
+    border:none;
+    cursor:pointer;
+    border-radius:40px;
+    padding:16px 34px;
+    font-size:17px;
+    font-weight:600;
+    background:linear-gradient(90deg,#6aa8ff,#ff8ece);
+    color:#fff;
+    transition:.35s;
+
+    display:block;
+    width:80%;
+    max-width:300px;
+    margin:15px auto;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 12px 25px rgba(106,168,255,.35);
+}
+
+button:disabled{
+    opacity:0.6;
+    cursor:not-allowed;
+}
+
+/* ==========================================
+   MAIN WEBSITE
+========================================== */
+
+#mainContent{
+    display:none;
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+#typewriter{
+    font-size:2.6rem;
+    font-weight:700;
+    max-width:800px;
+    min-height:180px;
+    color:#222;
+}
+
+.subtitle{
+    margin-top:25px;
+    color:#777;
+    font-size:1rem;
+}
+
+#nextButtonContainer{
+    margin-top:40px;
+    display:none;
+}
+
+.centerButton{
+    text-align:center;
+    margin-top:40px;
+}
+
+/* ==========================================
+   HIDE STORY SECTIONS
+========================================== */
+
+.letter,
+.videoSection,
+.journey,
+.promise{
+    display:none;
+    max-width:1000px;
+    margin:90px auto;
+    padding:0 20px;
+}
+
+.showSection{
+    display:block !important;
+    animation:fadeIn .8s ease;
+}
+
+/* ==========================================
+   LETTER
+========================================== */
+
+.letter h2{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:2rem;
+}
+
+.letter p{
+    background:#fff;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    color:#444;
+    line-height:2;
+}
+
+/* ==========================================
+   VIDEO
+========================================== */
+
+.videoSection{
+    text-align:center;
+}
+
+.videoSection h2{
+    margin-bottom:20px;
+}
+
+.videoSection video{
+    width:100%;
+    border-radius:25px;
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+    margin:25px 0;
+}
+
+.videoSection p{
+    color:#666;
+}
+
+/* ==========================================
+   JOURNEY (MERGED GALLERY + TIMELINE)
+========================================== */
+
+.journey h2{
+    text-align:center;
+    margin-bottom:35px;
+    font-size:2rem;
+}
+
+.galleryGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin:30px 0;
+}
+
+.galleryGrid img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.galleryGrid img:hover{
+    transform:scale(1.05);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+
+.timelineItem{
+    display:flex;
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.dot{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#ff8ecf;
+    margin-top:8px;
+    flex-shrink:0;
+}
+
+.content{
+    flex:1;
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.kiss-placeholder{
+    text-align:center;
+    padding:1.5rem;
+    background:#fff0f5;
+    border-radius:20px;
+    margin:1.5rem 0;
+}
+
+.forever-placeholder{
+    text-align:center;
+    padding:1.5rem;
+    background:#f0f8ff;
+    border-radius:20px;
+    margin:1.5rem 0;
+}
+
+.placeholder-text{
+    font-size:1.2rem;
+    font-weight:600;
+    color:#b3005e;
+}
+
+.celebration-text{
+    text-align:center;
+    margin:2rem 0;
+}
+
+.birthday-text{
+    font-size:2rem;
+    font-weight:700;
+    color:#d63384;
+}
+
+.anniversary-text{
+    font-size:2rem;
+    font-weight:700;
+    color:#d63384;
+}
+
+.story-message{
+    text-align:center;
+    font-size:1.2rem;
+    font-weight:600;
+    color:#b3005e;
+    margin:2rem 0;
+}
+
+/* ==========================================
+   PROMISE
+========================================== */
+
+.promiseCard{
+    background:#fff;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.promiseCard h2{
+    margin-bottom:25px;
+}
+
+.promiseCard p{
+    line-height:2;
+    color:#444;
+}
+
+.promiseCard h3{
+    margin-top:30px;
+    color:#ff6fb8;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.hero{
+    min-height:80vh;
+}
+
+#typewriter{
+    font-size:2rem;
+    min-height:150px;
+}
+
+.giftCard{
+    padding:30px;
+}
+
+.giftCard h1{
+    font-size:2rem;
+}
+
+.timelineItem{
+    flex-direction:column;
+}
+
+.galleryGrid{
+    grid-template-columns:1fr;
+}
+
+button{
+    width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+#typewriter{
+    font-size:1.6rem;
+}
+
+.giftCard h1{
+    font-size:1.7rem;
+}
+
+}
+/* ==========================================
+   GIFT GLOW
+========================================== */
+
+@keyframes giftGlow{
+
+0%{
+    transform:scale(1);
+    filter:
+        drop-shadow(0 0 6px #6faeff)
+        drop-shadow(0 0 10px #ff9ed1);
+}
+
+50%{
+    transform:scale(1.06);
+    filter:
+        drop-shadow(0 0 20px #6faeff)
+        drop-shadow(0 0 35px #ff8ed1);
+}
+
+100%{
+    transform:scale(1);
+    filter:
+        drop-shadow(0 0 6px #6faeff)
+        drop-shadow(0 0 10px #ff9ed1);
+}
+
+}
+/* ==========================================
+   GIFT BOUNCE
+========================================== */
+
+.bounce{
+    animation:giftBounce .5s ease;
+}
+
+@keyframes giftBounce{
+
+0%{
+    transform:scale(1);
+}
+
+30%{
+    transform:scale(1.12);
+}
+
+60%{
+    transform:scale(.95);
+}
+
+100%{
+    transform:scale(1);
+}
+
+}
+/* ==========================
+   HEART BURST
+========================== */
+
+#heartContainer{
+    position:absolute;
+    left:50%;
+    top:40px;
+    width:0;
+    height:0;
+    pointer-events:none;
+}
+
+.heart{
+    position:absolute;
+    font-size:24px;
+    animation:flyHeart 2s ease-out forwards;
+}
+
+@keyframes flyHeart{
+
+0%{
+    opacity:1;
+    transform:translate(0,0) scale(.3);
+}
+
+100%{
+    opacity:0;
+    transform:
+        translate(var(--x),-180px)
+        scale(1.4)
+        rotate(360deg);
+}
+
+    }
