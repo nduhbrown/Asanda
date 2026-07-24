@@ -79,14 +79,14 @@ function burstHearts(){
 }
 function typeMessage() {
 
-    if (line >= lines.length) {
+    if (line >= message.length) {
         if (nextButtonContainer) {
             nextButtonContainer.style.display = "block";
         }
         return;
     }
 
-    if (letterIndex < lines[line].length) {
+    if (letterIndex < message[line].length) {
 
         typewriter.innerHTML += lines[line].charAt(letterIndex);
 
