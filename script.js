@@ -78,7 +78,11 @@ if (openGift) {
 
     openGift.addEventListener("click", () => {
 
-        giftBox.classList.add("open");
+        giftBox.classList.add("bounce");
+
+setTimeout(()=>{
+    giftBox.classList.add("open");
+},200);
 
         openGift.disabled = true;
 
