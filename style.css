@@ -81,6 +81,200 @@ body::after{
 
 .giftCard h3{
     color:#6a97ff;
+   /* ==========================================
+   FOREHEAD KISS GIF
+========================================== */
+
+.kiss-gif-container {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #ffffff;
+    border-radius: 30px;
+    margin: 1.5rem 0;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(255, 150, 180, 0.1);
+}
+
+.kiss-gif {
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 20px;
+    object-fit: contain;
+    animation: gifFloat 3s ease-in-out infinite;
+}
+
+@keyframes gifFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.gif-caption {
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    color: #d63384;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   FLOATING HEARTS ANIMATION
+========================================== */
+
+#floatingHeartsAnimation {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe4ec 100%);
+    border-radius: 30px;
+    margin: 1.5rem 0;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(255, 150, 180, 0.15);
+}
+
+.hearts-scene {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.floating-heart-item {
+    position: absolute;
+    font-size: 28px;
+    animation: heartFloatUp 3.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes heartFloatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.3) rotate(0deg);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(-10px) scale(0.8) rotate(-5deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(1.8) rotate(25deg);
+    }
+}
+
+.hearts-caption {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: #d63384;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    animation: captionPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes captionPulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+        text-shadow: 0 0 30px rgba(214, 51, 132, 0.3);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE FOR GIF & HEARTS
+========================================== */
+
+@media (max-width: 600px) {
+    .kiss-gif-container {
+        min-height: 240px;
+        padding: 1.5rem 0.8rem;
+    }
+    
+    .kiss-gif {
+        max-height: 200px;
+    }
+    
+    .gif-caption {
+        font-size: 0.95rem;
+    }
+    
+    #floatingHeartsAnimation {
+        min-height: 200px;
+        padding: 1.5rem 0.8rem;
+    }
+    
+    .hearts-scene {
+        height: 160px;
+    }
+    
+    .floating-heart-item {
+        font-size: 22px;
+    }
+    
+    .hearts-caption {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .kiss-gif-container {
+        min-height: 200px;
+        padding: 1rem;
+    }
+    
+    .kiss-gif {
+        max-height: 160px;
+    }
+    
+    .gif-caption {
+        font-size: 0.85rem;
+    }
+    
+    #floatingHeartsAnimation {
+        min-height: 160px;
+        padding: 1rem;
+    }
+    
+    .hearts-scene {
+        height: 130px;
+    }
+    
+    .floating-heart-item {
+        font-size: 18px;
+    }
+    
+    .hearts-caption {
+        font-size: 0.85rem;
+    }
+   }
     margin-bottom:15px;
 }
 
