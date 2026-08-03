@@ -113,7 +113,14 @@ if (openGift) {
 
     openGift.addEventListener("click", function(e) {
         e.preventDefault();
-        
+        // Start background music
+if (bgMusic) {
+    bgMusic.volume = 0.2;
+
+    bgMusic.play().catch(error => {
+        console.log("Background music could not start:", error);
+    });
+}
         // Add bounce animation
         giftBox.classList.add("bounce");
 
