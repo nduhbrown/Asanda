@@ -9,6 +9,7 @@ const mainContent = document.getElementById("mainContent");
 
 const giftBox = document.getElementById("giftBox");
 const openGift = document.getElementById("openGift");
+const bgMusic = document.getElementById("bgMusic");
 
 const typewriter = document.getElementById("typewriter");
 
